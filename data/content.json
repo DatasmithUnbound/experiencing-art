@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "badge": "25+ years experience · all levels",
+    "line1": "No pressure.",
+    "line2": "No perfection.",
+    "highlight": "Just joy.",
+    "subtext": "Fun, relaxing guided acrylic painting sessions for groups of all levels. Bring your friends — leave with your own original work of art.",
+    "cta_text": "Book a session"
+  },
+  "about": {
+    "portrait": "images/cfa47a8d-82f7-4fee-aa96-c7b6b02d3c66.png",
+    "heading": "Hi, I'm Patty Moore.",
+    "paragraph1": "With over 25 years of experience teaching art, I create fun, relaxing, and inspiring painting experiences for individuals and groups of all levels.",
+    "paragraph2": "Whether you've never painted before or already love to create, my sessions are designed to help you unwind, explore your creativity, and leave with your own original artwork. I guide each person at their own pace — helping everyone feel confident and inspired.",
+    "quote": "No pressure. No perfection. Just creativity, joy, and the satisfaction of making something beautiful."
+  },
+  "gallery": [
+    { "image": "images/52db1538-8e1b-4aab-81c3-c2bd05d917e3.jpg", "alt": "Group outdoors with bright floral paintings" },
+    { "image": "images/ccf8f0d7-5de9-43b6-b986-a9e116903651.jpg", "alt": "Finished portrait painting of a girl" },
+    { "image": "images/39daa3ae-8ad3-4020-a256-287d08a40cb4.jpg", "alt": "Painter with her finished artwork" },
+    { "image": "images/8b100d35-ee59-4d1a-acee-c9ab8d41441b.jpg", "alt": "Finished floral still life painting" },
+    { "image": "images/3583037c-4d79-420e-ad79-994d7606a70f.jpg", "alt": "A bright class in progress" },
+    { "image": "images/6b99a8e7-dfda-410e-a244-79ee7ba8b343.jpg", "alt": "Painter smiling with her flower painting" },
+    { "image": "images/2da9a5ef-029a-409e-af94-d08b350c75ee.jpg", "alt": "Finished painting of a cafe terrace" },
+    { "image": "images/a5f45c7b-f8f1-42a5-bdf3-1b5ff8a8fa3b.jpg", "alt": "Group by the pool holding paintings" },
+    { "image": "images/406976b7-130f-44e2-ae23-4aa939b725ff.jpg", "alt": "Finished painting of sailboats" },
+    { "image": "images/214dd9c0-1b6d-41f7-a587-7ae3d8492fb9.jpg", "alt": "Group with their finished paintings" },
+    { "image": "images/0878c7a0-cdee-4079-bef1-f4698901e15d.jpg", "alt": "Painters at work" },
+    { "image": "images/4d66265a-f031-4ffd-92bf-292d992bf652.jpg", "alt": "Group holding bright floral paintings" }
+  ],
+  "reviews": [
+    { "quote": "I hadn't painted since grade school and was so nervous — Patty made it completely stress-free. I left with a painting I'm actually proud to hang up!", "name": "Megan R.", "context": "Birthday celebration" },
+    { "quote": "We booked Patty for a team afternoon and everyone loved it. So warm and encouraging, and somehow every painting came out completely different.", "name": "Daniel K.", "context": "Team-building event" },
+    { "quote": "A perfect ladies' afternoon. Patty provides everything and guides you the whole way. We're already planning to book our next session!", "name": "Sofia L.", "context": "Ladies' afternoon" }
+  ],
+  "contact": {
+    "phone_display": "(000) 000-0000",
+    "phone_link": "tel:+10000000000",
+    "email": "hello@experiencingart.com",
+    "instagram_handle": "@experiencingart",
+    "instagram_url": "#",
+    "facebook_label": "Experiencing Art",
+    "facebook_url": "#"
+  },
+  "footer_tagline": "Guided acrylic painting with Patty Moore · Loving art… always."
+}
