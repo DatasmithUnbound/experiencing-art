@@ -411,34 +411,77 @@ body{background:#FFF7E6;}
 .lift{transition:transform .22s ease, box-shadow .22s ease;}
 .lift:hover{transform:translateY(-5px);box-shadow:0 18px 34px rgba(43,33,24,.16);}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ============ MOBILE / TABLET RESPONSIVE OVERRIDES ============ */
+/* These use !important because the elements above carry inline
+   styles (inline style specificity always beats a stylesheet rule
+   unless !important is used). */
+img { max-width: 100%; height: auto; }
+
+@media (max-width: 900px) {
+  /* Nav: hide the middle links, keep logo + Book button so nothing overlaps */
+  #site-nav-bar { padding: 14px 20px !important; }
+  #nav-link-about, #nav-link-sessions, #nav-link-gallery, #nav-link-reviews { display: none !important; }
+  #site-nav-links { gap: 14px !important; }
+
+  /* Hero: single column, smaller headline */
+  #top { grid-template-columns: 1fr !important; padding: 40px 20px 48px !important; gap: 32px !important; }
+  #top h1 { font-size: 42px !important; }
+
+  /* About: single column */
+  #about { grid-template-columns: 1fr !important; padding: 56px 20px !important; gap: 32px !important; }
+  #about h2 { font-size: 34px !important; }
+
+  /* Sessions section padding + 3-step grid -> single column */
+  #sessions-inner { padding: 56px 20px !important; }
+  #session-steps { grid-template-columns: 1fr !important; }
+
+  /* Fixed 719px "Everything's included" box -> fluid width */
+  #included-box { width: 100% !important; height: auto !important; padding: 28px 24px !important; }
+  #included-grid { grid-template-columns: 1fr !important; }
+
+  /* Gallery: single column instead of 3 */
+  #gallery { padding: 56px 20px !important; }
+  #gallery-grid { column-count: 1 !important; }
+
+  /* Reviews: single column instead of 3 */
+  #reviews-grid { grid-template-columns: 1fr !important; }
+
+  /* Book/contact section: single column */
+  #book { grid-template-columns: 1fr !important; padding: 56px 20px !important; gap: 32px !important; }
+  #book h2 { font-size: 34px !important; }
+
+  /* Social links row (Instagram/Facebook) -> stack instead of side-by-side */
+  #social-row { flex-direction: column !important; }
+
+  /* Booking form: email + group size -> stack instead of side-by-side */
+  #form-row-email-size { flex-direction: column !important; }
+  #group-size-label { width: 100% !important; }
+}
+
+@media (max-width: 480px) {
+  #top h1 { font-size: 34px !important; }
+  #about h2, #book h2 { font-size: 28px !important; }
+}
 </style>
 
 </head>
 <body>
-<!DOCTYPE html>
-<html><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-
-
-
 
 <div style="font-family:'Mulish',sans-serif;color:#2B2118;background:#FFF7E6;overflow-x:hidden;">
 
   <!-- ===================== NAV ===================== -->
   <div style="position:sticky;top:0;z-index:50;background:rgba(255,247,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid #efe2c4;">
-    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;">
+    <div id="site-nav-bar" style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;">
       <a href="#top" style="text-decoration:none;font:600 23px/1 'Fredoka',sans-serif;color:#2B2118;display:flex;align-items:center;gap:11px;">
         <span style="display:inline-flex;width:38px;height:38px;border-radius:50%;background:#FFC83D;align-items:center;justify-content:center;font-size:19px;">🎨</span>
         Experiencing&nbsp;Art
       </a>
-      <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:600;color:#5e513c;">
-        <a href="#about" class="navlink" style="text-decoration:none;color:inherit;">About</a>
-        <a href="#sessions" class="navlink" style="text-decoration:none;color:inherit;">Sessions</a>
-        <a href="#gallery" class="navlink" style="text-decoration:none;color:inherit;">Gallery</a>
-        <a href="#reviews" class="navlink" style="text-decoration:none;color:inherit;">Reviews</a>
+      <div id="site-nav-links" style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:600;color:#5e513c;">
+        <a href="#about" id="nav-link-about" class="navlink" style="text-decoration:none;color:inherit;">About</a>
+        <a href="#sessions" id="nav-link-sessions" class="navlink" style="text-decoration:none;color:inherit;">Sessions</a>
+        <a href="#gallery" id="nav-link-gallery" class="navlink" style="text-decoration:none;color:inherit;">Gallery</a>
+        <a href="#reviews" id="nav-link-reviews" class="navlink" style="text-decoration:none;color:inherit;">Reviews</a>
         <a href="#book" class="btnA" style="text-decoration:none;background:#FF6B5B;color:#fff;padding:11px 22px;border-radius:30px;white-space:nowrap;">Book a session</a>
       </div>
     </div>
@@ -498,14 +541,14 @@ body{background:#FFF7E6;}
   <!-- ===================== SESSIONS ===================== -->
   <div id="sessions" style="background:#fff;">
     
-  <div style="max-width:1180px;margin:0 auto;padding:88px 40px;">
+  <div id="sessions-inner" style="max-width:1180px;margin:0 auto;padding:88px 40px;">
       <div style="text-align:center;margin-bottom:54px;">
         <div style="font:600 13px 'Mulish';letter-spacing:.16em;text-transform:uppercase;color:#c79a3c;margin-bottom:14px;">Acrylic painting parties &amp; guided art sessions</div>
         <h2 style="font:600 46px/1.05 'Fredoka',sans-serif;color:#2B2118;letter-spacing:-.01em;">How a session works</h2>
       </div>
 
       <!-- 3 steps -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px;">
+      <div id="session-steps" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px;">
         <div class="lift" style="background:#FFF7E6;border-radius:20px;padding:32px 28px;">
           <div style="width:50px;height:50px;border-radius:14px;background:#FFC83D;display:flex;align-items:center;justify-content:center;font:600 22px 'Fredoka';color:#2B2118;margin-bottom:20px;">1</div>
           <h3 style="font:600 21px 'Fredoka';color:#2B2118;margin-bottom:10px;">Settle in &amp; relax</h3>
@@ -524,9 +567,9 @@ body{background:#FFF7E6;}
       </div>
 
       <!-- included + pricing -->
-      <div style="background: #FFF7E6; border-radius: 22px; padding: 38px 40px; width: 719px; height: 270px">
+      <div id="included-box" style="background: #FFF7E6; border-radius: 22px; padding: 38px 40px; width: 719px; height: 270px">
           <h3 style="font:600 24px 'Fredoka';color:#2B2118;margin-bottom:22px;">Everything's included</h3>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;">
+          <div id="included-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;">
             <div style="display:flex;align-items:center;gap:12px;font-size:16px;color:#3f3526;"><span style="color:#FF6B5B;font-size:18px;">●</span>Acrylic paints</div>
             <div style="display:flex;align-items:center;gap:12px;font-size:16px;color:#3f3526;"><span style="color:#FFC83D;font-size:18px;">●</span>Brushes</div>
             <div style="display:flex;align-items:center;gap:12px;font-size:16px;color:#3f3526;"><span style="color:#9BD4C4;font-size:18px;">●</span>Paper &amp; painting surfaces</div>
@@ -594,7 +637,7 @@ body{background:#FFF7E6;}
           <span style="width:44px;height:44px;border-radius:12px;background:#FF6B5B;display:flex;align-items:center;justify-content:center;font-size:20px;">✉️</span>
           <span><b style="display:block;color:#2B2118;font-size:15px;">Email</b><span id="contact-email-display" style="color:#8a7c63;font-size:14px;">hello@experiencingart.com</span></span>
         </a>
-        <div style="display:flex;gap:16px;">
+        <div id="social-row" style="display:flex;gap:16px;">
           <a id="contact-instagram-link" href="#" style="flex:1;text-decoration:none;display:flex;align-items:center;gap:14px;background:#fff;border-radius:14px;padding:16px 20px;box-shadow:0 6px 16px rgba(43,33,24,.07);">
             <span style="width:44px;height:44px;border-radius:12px;background:#9BD4C4;display:flex;align-items:center;justify-content:center;font-size:20px;">📷</span>
             <span><b style="display:block;color:#2B2118;font-size:15px;">Instagram</b><span id="contact-instagram-handle" style="color:#8a7c63;font-size:14px;">@experiencingart</span></span>
@@ -622,12 +665,12 @@ body{background:#FFF7E6;}
               <span style="display:block;font-size:13px;font-weight:700;color:#5e513c;margin-bottom:7px;">Your name</span>
               <input type="text" required="required" placeholder="Jane Doe" style="width:100%;border:1.5px solid #efe2c4;background:#FFFCF4;border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;color:#2B2118;outline:none;">
             </label>
-            <div style="display:flex;gap:14px;">
+            <div id="form-row-email-size" style="display:flex;gap:14px;">
               <label style="flex:1;">
                 <span style="display:block;font-size:13px;font-weight:700;color:#5e513c;margin-bottom:7px;">Email</span>
                 <input type="email" required="required" placeholder="jane@email.com" style="width:100%;border:1.5px solid #efe2c4;background:#FFFCF4;border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;color:#2B2118;outline:none;">
               </label>
-              <label style="width:38%;">
+              <label id="group-size-label" style="width:38%;">
                 <span style="display:block;font-size:13px;font-weight:700;color:#5e513c;margin-bottom:7px;">Group size</span>
                 <input type="number" min="1" placeholder="6" style="width:100%;border:1.5px solid #efe2c4;background:#FFFCF4;border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;color:#2B2118;outline:none;">
               </label>
@@ -674,6 +717,5 @@ body{background:#FFF7E6;}
   });
 </script>
 <script src="script.js"></script>
-</body></html>
 </body>
 </html>
