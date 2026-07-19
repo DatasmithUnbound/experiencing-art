@@ -1,0 +1,72 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Enables drag-and-drop photo uploads. Uploaded files land in /images
+# and get referenced by their path automatically.
+media_folder: "images"
+public_folder: "images"
+
+publish_mode: simple
+
+collections:
+  - name: "site_content"
+    label: "Site Content"
+    files:
+      - name: "content"
+        label: "Experiencing Art — Page Content"
+        file: "data/content.json"
+        fields:
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge text", name: "badge", widget: "string" }
+              - { label: "Headline — line 1", name: "line1", widget: "string" }
+              - { label: "Headline — line 2", name: "line2", widget: "string" }
+              - { label: "Headline — highlighted line", name: "highlight", widget: "string" }
+              - { label: "Subtext", name: "subtext", widget: "text" }
+              - { label: "Button text", name: "cta_text", widget: "string" }
+
+          - label: "About / Meet Patty"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Portrait photo", name: "portrait", widget: "image" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+              - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+              - { label: "Pull-quote", name: "quote", widget: "text" }
+
+          - label: "Gallery Photos"
+            name: "gallery"
+            widget: "list"
+            label_singular: "Photo"
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Description (for accessibility)", name: "alt", widget: "string" }
+
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            label_singular: "Review"
+            summary: "{{fields.name}} — {{fields.context}}"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Client name", name: "name", widget: "string" }
+              - { label: "Occasion", name: "context", widget: "string" }
+
+          - label: "Contact Info"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Phone (displayed)", name: "phone_display", widget: "string", hint: "e.g. (954) 555-0123" }
+              - { label: "Phone (link)", name: "phone_link", widget: "string", hint: "e.g. tel:+19545550123 — no spaces or dashes" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Instagram handle (displayed)", name: "instagram_handle", widget: "string" }
+              - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+              - { label: "Facebook label (displayed)", name: "facebook_label", widget: "string" }
+              - { label: "Facebook URL", name: "facebook_url", widget: "string" }
+
+          - { label: "Footer tagline", name: "footer_tagline", widget: "string" }
