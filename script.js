@@ -11,6 +11,7 @@ fetch('data/content.json?_=' + Date.now())
     setText('hero-highlight', data.hero.highlight);
     setText('hero-subtext', data.hero.subtext);
     setText('hero-cta', data.hero.cta_text);
+    setBackground('hero-image', data.hero.hero_image);
 
     setSrc('about-portrait', data.about.portrait);
     setText('about-heading', data.about.heading);
@@ -42,6 +43,11 @@ function setText(id, value) {
 function setSrc(id, value) {
   const el = document.getElementById(id);
   if (el && value) el.src = value;
+}
+
+function setBackground(id, value) {
+  const el = document.getElementById(id);
+  if (el && value) el.style.backgroundImage = `url("${value}")`;
 }
 
 function setHref(id, value) {
