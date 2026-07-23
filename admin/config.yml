@@ -65,9 +65,9 @@ collections:
               - { label: "Phone (displayed)", name: "phone_display", widget: "string", hint: "e.g. (561) 358-8831" }
               - { label: "Phone (link)", name: "phone_link", widget: "string", hint: "e.g. tel:+5613588831 — no spaces or dashes" }
               - { label: "Email", name: "email", widget: "string" }
-              - { label: "Instagram handle (displayed)", name: "instagram_handle", widget: "string" }
-              - { label: "Instagram URL", name: "instagram_url", widget: "string" }
-              - { label: "Facebook label (displayed)", name: "facebook_label", widget: "string" }
-              - { label: "Facebook URL", name: "facebook_url", widget: "string" }
+              - { label: "Instagram handle (displayed)", name: @patriciamystudio, widget: "string" }
+              - { label: "Instagram URL", name: https://www.instagram.com/patriciamystudio/, widget: "string" }
+              - { label: "Facebook label (displayed)", name: patriciamooremystudio, widget: "string" }
+              - { label: "Facebook URL", name: https://www.facebook.com/patriciamooremystudio, widget: "string" }
 
           - { label: "Footer tagline", name: "footer_tagline", widget: "string" }
